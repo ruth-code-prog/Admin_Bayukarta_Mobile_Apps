@@ -18,6 +18,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { getListUser, deleteUser, searchListUser } from "actions/UserAction";
 import swal from "sweetalert";
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
 
 class ListUser extends Component {
   componentDidMount() {
@@ -83,11 +85,13 @@ class ListUser extends Component {
                       Object.keys(getListUserResult).map((key) => (
                         <tr>
                           <td>
+                            <Zoom>
                             <img
                               src={getListUserResult[key].photo}
-                              width="440"
+                              width="340"
                               alt={getListUserResult[key].fullName}
                             />
+                            </Zoom>
                             <p>{getListUserResult[key].fullName}</p>
                             <p>email: {getListUserResult[key].email} </p>
                           </td>

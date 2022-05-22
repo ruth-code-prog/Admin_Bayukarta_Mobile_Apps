@@ -16,8 +16,15 @@ import {
 } from "reactstrap";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { getListAssmit, deleteAssmit, searchListAssmit } from "actions/AssmitAction";
+import {
+  getListAssmit,
+  deleteAssmit,
+  searchListAssmit,
+} from "actions/AssmitAction";
 import swal from "sweetalert";
+import Zoom from 'react-medium-image-zoom'
+import 'react-medium-image-zoom/dist/styles.css'
+
 
 class ListAssmit extends Component {
   componentDidMount() {
@@ -32,7 +39,10 @@ class ListAssmit extends Component {
   componentDidUpdate(prevProps) {
     const { deleteAssmitResult } = this.props;
 
-    if (deleteAssmitResult && prevProps.deleteAssmitResult !== deleteAssmitResult) {
+    if (
+      deleteAssmitResult &&
+      prevProps.deleteAssmitResult !== deleteAssmitResult
+    ) {
       swal("Sukses!", deleteAssmitResult, "success");
       this.props.dispatch(getListAssmit());
     }
@@ -50,7 +60,7 @@ class ListAssmit extends Component {
         <Row>
           <Col md="12">
             <Card>
-            <Row className="px-4 align-items-center justify-content-between">
+              <Row className="px-4 align-items-center justify-content-between">
                 <CardHeader>
                   <CardTitle tag="h4">List appoitments Pasien Umum</CardTitle>
                 </CardHeader>
@@ -72,6 +82,7 @@ class ListAssmit extends Component {
                 <Table>
                   <thead className="text-primary">
                     <tr>
+                      <th>Kartu Peserta</th> 
                       <th>Account Name</th>
                       <th>Nama Pasien</th>
                       <th>No Wa</th>
@@ -88,7 +99,16 @@ class ListAssmit extends Component {
                     {getListAssmitResult ? (
                       Object.keys(getListAssmitResult).map((key) => (
                         <tr key={key}>
-                        <td>{getListAssmitResult[key].namaAkun}</td>
+                          <td>
+                          <Zoom>
+                            <img
+                              src={getListAssmitResult[key].photo}
+                              width="440"
+                              alt={getListAssmitResult[key].namaAkun}
+                            />
+                            </Zoom>
+                          </td>
+                          <td>{getListAssmitResult[key].namaAkun}</td>
                           <td>{getListAssmitResult[key].nama}</td>
                           <td>{getListAssmitResult[key].noWa}</td>
                           <td>{getListAssmitResult[key].tanggalLahir}</td>
@@ -98,8 +118,8 @@ class ListAssmit extends Component {
                           <td>{getListAssmitResult[key].tanggalKehadiran}</td>
                           <td>
                             <Button
-                            color="danger"
-                             className="ml-2"
+                              color="danger"
+                              className="ml-2"
                               onClick={() =>
                                 this.removeData(
                                   key,
@@ -154,4 +174,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, null)(ListAssmit);
-
