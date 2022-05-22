@@ -18,7 +18,7 @@
 */
 import EditUser from 'views/User/EditUser';
 import TambahUser from 'views/User/TambahUser';
-import { ListJadwal, TambahJadwal, ListUser, ListPasien, EditPasien,ListAppo, Dashboard, Icons, EditJadwal,} from'./views'
+import { ListJadwal, TambahJadwal, ListUser, ListPasien, EditPasien,ListAppo, ListAssmit, Dashboard, Icons, EditJadwal,} from'./views'
 
 var routes = [
   {
@@ -79,6 +79,14 @@ var routes = [
     name: "Appoitments Umum",
     icon: "nc-icon nc-diamond",
     component: ListAppo,
+    layout: "/admin",
+    sidebar: true,
+  },
+  {
+    path: "/assmit",
+    name: "Appoitments Asuransi & Mitra",
+    icon: "nc-icon nc-bullet-list-67",
+    component: ListAssmit,
     layout: "/admin",
     sidebar: true,
   },
