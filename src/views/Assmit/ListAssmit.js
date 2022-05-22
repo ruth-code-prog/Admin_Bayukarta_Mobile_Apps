@@ -62,7 +62,7 @@ class ListAssmit extends Component {
             <Card>
               <Row className="px-4 align-items-center justify-content-between">
                 <CardHeader>
-                  <CardTitle tag="h4">List appoitments Pasien Umum</CardTitle>
+                  <CardTitle tag="h4">List appoitments Pasien Asuransi & Mitra</CardTitle>
                 </CardHeader>
                 <form className="mt-4">
                   <InputGroup className="no-border">
