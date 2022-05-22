@@ -59,7 +59,7 @@ class ListPasien extends Component {
             <Card>
               <Row className="px-4 align-items-center justify-content-between">
                 <CardHeader>
-                  <CardTitle tag="h4">List Pasien Terlayani</CardTitle>
+                  <CardTitle tag="h4">List Pasien sedang diLayani</CardTitle>
                 </CardHeader>
                 <form className="mt-4">
                   <InputGroup className="no-border">
@@ -80,7 +80,7 @@ class ListPasien extends Component {
                   <thead className="text-primary">
                     <tr>
                       <th>Klinik</th>
-                      <th>Pasien Terlayani</th>
+                      <th>Pasien sedang diLayani</th>
                       <th>Aksi</th>
                     </tr>
                   </thead>
@@ -100,7 +100,7 @@ class ListPasien extends Component {
                           <td>
                             <p>Klinik: {getListPasienResult[key].title}</p>
                             <p>
-                              Pasien Terlayani: {getListPasienResult[key].body}
+                              Pasien sedang diLayani: {getListPasienResult[key].body}
                             </p>
                           </td>
                           <td>

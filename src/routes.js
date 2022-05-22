@@ -61,7 +61,7 @@ var routes = [
   },
   {
     path: "/pasien",
-    name: "Pasien Terlayani",
+    name: "Pasien sedang diLayani",
     icon: "nc-icon nc-circle-10",
     component: ListPasien,
     layout: "/admin",
@@ -69,15 +69,15 @@ var routes = [
   },
   {
     path: "/pasien/edit/:id",
-    name: "Edit Nomor Antrian Pasien Terlayani",
+    name: "Edit Nomor Antrian Pasien sedang diLayani",
     component: EditPasien,
     layout: "/admin",
     sidebar: false,
   },
   {
     path: "/appo",
-    name: "Appoitments",
-    icon: "nc-icon nc-bullet-list-67",
+    name: "Appoitments Umum",
+    icon: "nc-icon nc-diamond",
     component: ListAppo,
     layout: "/admin",
     sidebar: true,

@@ -109,7 +109,7 @@ class EditPasien extends Component {
             <Card>
               <CardHeader>
                 <CardTitle tag="h4">
-                  Edit Nomor Antrian Pasien Terlayani
+                  Edit Nomor Antrian Pasien sedang diLayani
                 </CardTitle>
               </CardHeader>
               <CardBody>
@@ -126,14 +126,13 @@ class EditPasien extends Component {
                           name="title"
                           onChange={(event) => this.handleChange(event)}
                         />
-                        <label>Nomor Antrian Pasien Terlayani</label>
+                        <label>Nomor Antrian Pasien sedang diLayani</label>
                         <Input
                           type="text"
                           value={body}
                           name="body"
                           onChange={(event) => this.handleChange(event)}
                         />
-                        <label>penunjangPassword</label>
                       </FormGroup>
                     </Col>
                   </Row>
