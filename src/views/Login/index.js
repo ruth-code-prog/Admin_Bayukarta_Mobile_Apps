@@ -78,7 +78,7 @@ class Login extends Component {
                     type="email"
                     name="email"
                     value={email}
-                    placeholder="Asupkeun Email"
+                    placeholder="Masukkan Email"
                     onChange={(event) => this.handleChange(event)}
                   />
                 </FormGroup>
@@ -89,7 +89,7 @@ class Login extends Component {
                     type="password"
                     name="password"
                     value={password}
-                    placeholder="Asupkeun Password"
+                    placeholder="Masukkan Password"
                     onChange={(event) => this.handleChange(event)}
                   />
                 </FormGroup>

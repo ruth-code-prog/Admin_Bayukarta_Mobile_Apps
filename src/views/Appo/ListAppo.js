@@ -107,7 +107,7 @@ class ListAppo extends Component {
                                 )
                               }
                             >
-                              diPiceun
+                              Hapus
                             </Button>
                           </td>
                           <td></td>
