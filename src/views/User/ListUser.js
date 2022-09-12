@@ -88,7 +88,7 @@ class ListUser extends Component {
                             <Zoom>
                             <img
                               src={getListUserResult[key].photo}
-                              width="340"
+                              width="180"
                               alt={getListUserResult[key].fullName}
                             />
                             </Zoom>

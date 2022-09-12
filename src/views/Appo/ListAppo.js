@@ -18,6 +18,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { getListAppo, deleteAppo, searchListAppo } from "actions/AppoAction";
 import swal from "sweetalert";
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css'
 
 class ListAppo extends Component {
   componentDidMount() {
@@ -72,6 +74,7 @@ class ListAppo extends Component {
                 <Table>
                   <thead className="text-primary">
                     <tr>
+                      <th>KTP</th> 
                       <th>Account Name</th>
                       <th>Nama Pasien</th>
                       <th>No Wa</th>
@@ -88,6 +91,15 @@ class ListAppo extends Component {
                     {getListAppoResult ? (
                       Object.keys(getListAppoResult).map((key) => (
                         <tr key={key}>
+                           <td>
+                          <Zoom>
+                            <img
+                              src={getListAppoResult[key].gambar}
+                              width="180"
+                              alt={getListAppoResult[key].namaAkun}
+                            />
+                            </Zoom>
+                          </td>
                         <td>{getListAppoResult[key].namaAkun}</td>
                           <td>{getListAppoResult[key].nama}</td>
                           <td>{getListAppoResult[key].noWa}</td>

@@ -103,7 +103,7 @@ class ListAssmit extends Component {
                           <Zoom>
                             <img
                               src={getListAssmitResult[key].photo}
-                              width="440"
+                              width="180"
                               alt={getListAssmitResult[key].namaAkun}
                             />
                             </Zoom>
