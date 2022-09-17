@@ -94,25 +94,46 @@ class ListUser extends Component {
                             </Zoom>
                             <p>{getListUserResult[key].fullName}</p>
                             <p>email: {getListUserResult[key].email} </p>
-                          </td>
-                          <td style={{ maxWidth: 450 }}>
                             <p>
                               No. Handphone:{" "}
                               {getListUserResult[key].mobileNumber}
                             </p>
-                            <p>UID user: {getListUserResult[key].uid}</p>
-                            <p>Token: {getListUserResult[key].fcmToken}</p>
-                            <p>
-                              Pasword login: {getListUserResult[key].password}
-                            </p>
-                            <p>
-                              Password User Penunjang:{" "}
-                              {getListUserResult[key].penunjangPassword}
-                            </p>
-                            <p>appoitment1: {getListUserResult[key].appo1}</p>
-                            <p>appoitment2: {getListUserResult[key].appo2}</p>
-                            <p>appoitment3: {getListUserResult[key].appo3}</p>
-                            <p>appoitment4: {getListUserResult[key].appo4}</p>
+                          </td>
+                          <td style={{ maxWidth: 450 }}>
+                            <hr />
+
+                            <div style={{backgroundColor: '#E6E6FA'}}>
+                            <p>Pasien: {getListUserResult[key].os1}</p>
+                            <p>Dokter: {getListUserResult[key].dokter1}</p>
+                            <p>Klinik: {getListUserResult[key].klinik1}</p>
+                            <p>No Antrian: {getListUserResult[key].antrian1}</p>
+                            </div>
+
+                            <hr />
+                            <div style={{backgroundColor: ' 	#4B0082'}}>
+                            <p style={{color: '#FFFFFF'}}>Pasien: {getListUserResult[key].os2}</p>
+                            <p style={{color: '#FFFFFF'}}>Dokter: {getListUserResult[key].dokter2}</p>
+                            <p style={{color: '#FFFFFF'}}>Klinik: {getListUserResult[key].klinik2}</p>
+                            <p style={{color: '#FFFFFF'}}>No Antrian: {getListUserResult[key].antrian2}</p>
+                            </div>
+
+
+                            <hr />
+                            <div style={{backgroundColor: '#E6E6FA'}}>
+                            <p>Pasien: {getListUserResult[key].os3}</p>
+                            <p>Dokter: {getListUserResult[key].dokter3}</p>
+                            <p>Klinik: {getListUserResult[key].klinik3}</p>
+                            <p>No Antrian: {getListUserResult[key].antrian3}</p>
+                            </div>
+
+
+                            <hr />
+                            <div style={{backgroundColor: ' 	#4B0082'}}>
+                            <p style={{color: '#FFFFFF'}}>Pasien: {getListUserResult[key].os4}</p>
+                            <p style={{color: '#FFFFFF'}}>Dokter: {getListUserResult[key].dokter4}</p>
+                            <p style={{color: '#FFFFFF'}}>Klinik: {getListUserResult[key].klinik4}</p>
+                            <p style={{color: '#FFFFFF'}}>No Antrian: {getListUserResult[key].antrian4}</p>
+                            </div>
                           </td>
                           <td>
                             <Link

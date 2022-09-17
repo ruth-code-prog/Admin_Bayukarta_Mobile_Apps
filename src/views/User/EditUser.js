@@ -31,10 +31,22 @@ class EditUser extends Component {
       mobileNumber: "",
       password: "",
       penunjangPassword: "",
-      appo1: "",
-      appo2: "",
-      appo3: "",
-      appo4: "",
+      os1: "",
+      dokter1: "",
+      klinik1: "",
+      antrian1: "",
+      os2: "",
+      dokter2: "",
+      klinik2: "",
+      antrian2: "",
+      os3: "",
+      dokter3: "",
+      klinik3: "",
+      antrian3: "",
+      os4: "",
+      dokter4: "",
+      klinik4: "",
+      antrian4: "",
     };
   }
 
@@ -62,10 +74,22 @@ class EditUser extends Component {
         mobileNumber: getDetailUserResult.mobileNumber,
         password: getDetailUserResult.password,
         penunjangPassword: getDetailUserResult.penunjangPassword,
-        appo1: getDetailUserResult.appo1,
-        appo2: getDetailUserResult.appo2,
-        appo3: getDetailUserResult.appo3,
-        appo4: getDetailUserResult.appo4,
+        os1: getDetailUserResult.os1,
+        dokter1: getDetailUserResult.dokter1,
+        klinik1: getDetailUserResult.klinik1,
+        antrian1: getDetailUserResult.antrian1,
+        os2: getDetailUserResult.os2,
+        dokter2: getDetailUserResult.dokter2,
+        klinik2: getDetailUserResult.klinik2,
+        antrian2: getDetailUserResult.antrian2,
+        os3: getDetailUserResult.os3,
+        dokter3: getDetailUserResult.dokter3,
+        klinik3: getDetailUserResult.klinik3,
+        antrian3: getDetailUserResult.antrian3,
+        os4: getDetailUserResult.os4,
+        dokter4: getDetailUserResult.dokter4,
+        klinik4: getDetailUserResult.klinik4,
+        antrian4: getDetailUserResult.antrian4,
       });
     }
   }
@@ -93,10 +117,22 @@ class EditUser extends Component {
       mobileNumber,
       password,
       penunjangPassword,
-      appo1,
-      appo2,
-      appo3,
-      appo4,
+      os1,
+      dokter1,
+      klinik1,
+      antrian1,
+      os2,
+      dokter2,
+      klinik2,
+      antrian2,
+      os3,
+      dokter3,
+      klinik3,
+      antrian3,
+      os4,
+      dokter4,
+      klinik4,
+      antrian4,
     } = this.state;
     event.preventDefault();
 
@@ -112,10 +148,22 @@ class EditUser extends Component {
       mobileNumber,
       password,
       penunjangPassword,
-      appo1,
-      appo2,
-      appo3,
-      appo4,
+      os1,
+      dokter1,
+      klinik1,
+      antrian1,
+      os2,
+      dokter2,
+      klinik2,
+      antrian2,
+      os3,
+      dokter3,
+      klinik3,
+      antrian3,
+      os4,
+      dokter4,
+      klinik4,
+      antrian4,
     } = this.state;
     console.log("Image : ", this.state.photoToDB);
     const { updateUserLoading } = this.props;
@@ -140,53 +188,155 @@ class EditUser extends Component {
                   <Row>
                     <Col md={6}>
                       <FormGroup>
-                        <label>Nama User</label>
+                        <label style={{marginTop: 40, fontWeight: 'bold', fontSize: 22}}>Nama Akun (User)</label>
                         <Input
+                          style={{fontWeight: 'bold', color: 'black'}}
                           type="text"
                           value={fullName}
                           name="fullName"
                           onChange={(event) => this.handleChange(event)}
                         />
-                        <label>Mobile Number</label>
+                        <label style={{marginTop: 40, fontWeight: 'bold', fontSize: 22}}>Mobile Number</label>
                         <Input
+                          style={{fontWeight: 'bold', color: 'black'}}
                           type="text"
                           value={mobileNumber}
                           name="mobileNumber"
                           onChange={(event) => this.handleChange(event)}
                         />
-                        <label>penunjangPassword</label>
+                        <label style={{marginTop: 40, fontWeight: 'bold', fontSize: 22}}>Pasien 1</label>
+                        <h5>Os</h5>
                         <Input
+                          style={{backgroundColor: '#E6E6FA', fontWeight: 'bold', color: 'black', fontSize: 14}}
                           type="text"
-                          value={penunjangPassword}
-                          name="penunjangPassword"
+                          value={os1}
+                          name="os1"
                           onChange={(event) => this.handleChange(event)}
                         />
-                        <label>Appoitmen 1</label>
+                        <h5>Dokter</h5>
                         <Input
+                          style={{backgroundColor: '#E6E6FA', fontWeight: 'bold', color: "black"}}
                           type="text"
-                          value={appo1}
-                          name="appo1"
+                          value={dokter1}
+                          name="dokter1"
                           onChange={(event) => this.handleChange(event)}
                         />
-                        <label>Appoitmen 2</label>
+                        <h5>Klinik</h5>
                         <Input
+                           style={{backgroundColor: '#E6E6FA', fontWeight: 'bold', color: "black"}}
                           type="text"
-                          value={appo2}
-                          name="appo2"
+                          value={klinik1}
+                          name="klinik1"
                           onChange={(event) => this.handleChange(event)}
                         />
-                        <label>Appoitmen 3</label>
+                        <h5>Nomor Antrian</h5>
                         <Input
+                          style={{backgroundColor: '#E6E6FA', fontWeight: 'bold', color: "black"}}
                           type="text"
-                          value={appo3}
-                          name="appo3"
+                          value={antrian1}
+                          name="antrian1"
                           onChange={(event) => this.handleChange(event)}
                         />
-                        <label>Appoitmen 4</label>
+
+
+                        <label style={{marginTop: 50, fontWeight: 'bold', fontSize: 22}}>Pasien 2</label>
+                        <h5>Os</h5>
                         <Input
+                          style={{backgroundColor: ' 	#4B0082', color: "white", fontWeight: 'bold'}}
                           type="text"
-                          value={appo4}
-                          name="appo4"
+                          value={os2}
+                          name="os2"
+                          onChange={(event) => this.handleChange(event)}
+                        />
+                        <h5>Dokter</h5>
+                        <Input
+                          style={{backgroundColor: ' 	#4B0082', color: "white", fontWeight: 'bold'}}
+                          type="text"
+                          value={dokter2}
+                          name="dokter2"
+                          onChange={(event) => this.handleChange(event)}
+                        />
+                        <h5>Klinik</h5>
+                        <Input
+                          style={{backgroundColor: ' 	#4B0082', color: "white", fontWeight: 'bold'}}
+                          type="text"
+                          value={klinik2}
+                          name="klinik2"
+                          onChange={(event) => this.handleChange(event)}
+                        />
+                        <h5>Nomor Antrian</h5>
+                        <Input
+                          style={{backgroundColor: ' 	#4B0082', color: "white", fontWeight: 'bold'}}
+                          type="text"
+                          value={antrian2}
+                          name="antrian2"
+                          onChange={(event) => this.handleChange(event)}
+                        />
+
+                        <label style={{marginTop: 50, fontWeight: 'bold', fontSize: 22}}>Pasien 3</label>
+                        <h5>Os</h5>
+                        <Input
+                           style={{backgroundColor: '#E6E6FA', fontWeight: 'bold', color: "black"}}
+                          type="text"
+                          value={os3}
+                          name="os3"
+                          onChange={(event) => this.handleChange(event)}
+                        />
+                        <h5>Dokter</h5>
+                        <Input
+                           style={{backgroundColor: '#E6E6FA', fontWeight: 'bold', color: "black"}}
+                          type="text"
+                          value={dokter3}
+                          name="dokter3"
+                          onChange={(event) => this.handleChange(event)}
+                        />
+                        <h5>Klinik</h5>
+                        <Input
+                          style={{backgroundColor: '#E6E6FA', fontWeight: 'bold', color: "black"}}
+                          type="text"
+                          value={klinik3}
+                          name="klinik3"
+                          onChange={(event) => this.handleChange(event)}
+                        />
+                        <h5>Nomor Antrian</h5>
+                        <Input
+                           style={{backgroundColor: '#E6E6FA', fontWeight: 'bold', color: "black"}}
+                          type="text"
+                          value={antrian3}
+                          name="antrian3"
+                          onChange={(event) => this.handleChange(event)}
+                        />
+
+                        <label style={{marginTop: 50, fontWeight: 'bold', fontSize: 22}}>Pasien 4</label>
+                        <h5>Os</h5>
+                        <Input
+                          style={{backgroundColor: ' 	#4B0082', color: "white", fontWeight: 'bold'}}
+                          type="text"
+                          value={os4}
+                          name="os4"
+                          onChange={(event) => this.handleChange(event)}
+                        />
+                        <h5>Dokter</h5>
+                        <Input
+                          style={{backgroundColor: ' 	#4B0082', color: "white", fontWeight: 'bold'}}
+                          type="text"
+                          value={dokter4}
+                          name="dokter4"
+                          onChange={(event) => this.handleChange(event)}
+                        />
+                        <h5>klinik1</h5>
+                        <Input
+                          style={{backgroundColor: ' 	#4B0082', color: "white", fontWeight: 'bold'}}
+                          value={klinik4}
+                          name="klinik4"
+                          onChange={(event) => this.handleChange(event)}
+                        />
+                       <h5>Nomor Antrian</h5>
+                        <Input
+                          style={{backgroundColor: ' 	#4B0082', color: "white", fontWeight: 'bold'}}
+                          type="text"
+                          value={antrian4}
+                          name="antrian4"
                           onChange={(event) => this.handleChange(event)}
                         />
                       </FormGroup>
