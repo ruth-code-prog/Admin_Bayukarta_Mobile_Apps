@@ -18,8 +18,8 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { getListAppo, deleteAppo, searchListAppo } from "actions/AppoAction";
 import swal from "sweetalert";
-import Zoom from 'react-medium-image-zoom';
-import 'react-medium-image-zoom/dist/styles.css'
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 class ListAppo extends Component {
   componentDidMount() {
@@ -52,7 +52,7 @@ class ListAppo extends Component {
         <Row>
           <Col md="12">
             <Card>
-            <Row className="px-4 align-items-center justify-content-between">
+              <Row className="px-4 align-items-center justify-content-between">
                 <CardHeader>
                   <CardTitle tag="h4">List appoitments Pasien Umum</CardTitle>
                 </CardHeader>
@@ -74,7 +74,9 @@ class ListAppo extends Component {
                 <Table>
                   <thead className="text-primary">
                     <tr>
-                      <th>KTP</th> 
+                      <th>No.</th>
+                      <th>No.</th>
+                      <th>KTP</th>
                       <th>Account Name</th>
                       <th>Nama Pasien</th>
                       <th>No Wa</th>
@@ -89,18 +91,19 @@ class ListAppo extends Component {
 
                   <tbody>
                     {getListAppoResult ? (
-                      Object.keys(getListAppoResult).map((key) => (
+                      Object.keys(getListAppoResult).map((key, index) => (
                         <tr key={key}>
-                           <td>
-                          <Zoom>
-                            <img
-                              src={getListAppoResult[key].gambar}
-                              width="180"
-                              alt={getListAppoResult[key].namaAkun}
-                            />
+                          <td>{index+1}</td>
+                          <td>
+                            <Zoom>
+                              <img
+                                src={getListAppoResult[key].gambar}
+                                width="180"
+                                alt={getListAppoResult[key].namaAkun}
+                              />
                             </Zoom>
                           </td>
-                        <td>{getListAppoResult[key].namaAkun}</td>
+                          <td>{getListAppoResult[key].namaAkun}</td>
                           <td>{getListAppoResult[key].nama}</td>
                           <td>{getListAppoResult[key].noWa}</td>
                           <td>{getListAppoResult[key].tanggalLahir}</td>
@@ -110,8 +113,8 @@ class ListAppo extends Component {
                           <td>{getListAppoResult[key].tanggalKehadiran}</td>
                           <td>
                             <Button
-                            color="danger"
-                             className="ml-2"
+                              color="danger"
+                              className="ml-2"
                               onClick={() =>
                                 this.removeData(
                                   key,
@@ -166,4 +169,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, null)(ListAppo);
-

@@ -22,9 +22,8 @@ import {
   searchListAssmit,
 } from "actions/AssmitAction";
 import swal from "sweetalert";
-import Zoom from 'react-medium-image-zoom'
-import 'react-medium-image-zoom/dist/styles.css'
-
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 class ListAssmit extends Component {
   componentDidMount() {
@@ -62,7 +61,9 @@ class ListAssmit extends Component {
             <Card>
               <Row className="px-4 align-items-center justify-content-between">
                 <CardHeader>
-                  <CardTitle tag="h4">List appoitments Pasien Asuransi & Mitra</CardTitle>
+                  <CardTitle tag="h4">
+                    List appoitments Pasien Asuransi & Mitra
+                  </CardTitle>
                 </CardHeader>
                 <form className="mt-4">
                   <InputGroup className="no-border">
@@ -82,7 +83,8 @@ class ListAssmit extends Component {
                 <Table>
                   <thead className="text-primary">
                     <tr>
-                      <th>Kartu Peserta</th> 
+                      <th>No</th>
+                      <th>Kartu Peserta</th>
                       <th>Account Name</th>
                       <th>Nama Pasien</th>
                       <th>No Wa</th>
@@ -97,15 +99,16 @@ class ListAssmit extends Component {
 
                   <tbody>
                     {getListAssmitResult ? (
-                      Object.keys(getListAssmitResult).map((key) => (
+                      Object.keys(getListAssmitResult).map((key, index) => (
                         <tr key={key}>
+                          <td>{index + 1}</td>
                           <td>
-                          <Zoom>
-                            <img
-                              src={getListAssmitResult[key].photo}
-                              width="180"
-                              alt={getListAssmitResult[key].namaAkun}
-                            />
+                            <Zoom>
+                              <img
+                                src={getListAssmitResult[key].photo}
+                                width="180"
+                                alt={getListAssmitResult[key].namaAkun}
+                              />
                             </Zoom>
                           </td>
                           <td>{getListAssmitResult[key].namaAkun}</td>
