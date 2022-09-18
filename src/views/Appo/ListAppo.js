@@ -75,7 +75,6 @@ class ListAppo extends Component {
                   <thead className="text-primary">
                     <tr>
                       <th>No.</th>
-                      <th>No.</th>
                       <th>KTP</th>
                       <th>Account Name</th>
                       <th>Nama Pasien</th>
