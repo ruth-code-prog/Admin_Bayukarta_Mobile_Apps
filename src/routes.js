@@ -18,7 +18,7 @@
 */
 import EditUser from 'views/User/EditUser';
 import TambahUser from 'views/User/TambahUser';
-import { ListJadwal, TambahJadwal, ListUser, ListPasien, EditPasien,ListAppo, ListAssmit, Dashboard, Icons, EditJadwal,} from'./views'
+import { ListJadwal, TambahJadwal, ListUser, ListAppo, ListAssmit, Dashboard, Icons, EditJadwal,} from'./views'
 
 var routes = [
   {
@@ -58,21 +58,6 @@ var routes = [
     component: ListUser,
     layout: "/admin",
     sidebar: true,
-  },
-  {
-    path: "/pasien",
-    name: "Pasien sedang diLayani",
-    icon: "nc-icon nc-circle-10",
-    component: ListPasien,
-    layout: "/admin",
-    sidebar: true,
-  },
-  {
-    path: "/pasien/edit/:id",
-    name: "Edit Nomor Antrian Pasien sedang diLayani",
-    component: EditPasien,
-    layout: "/admin",
-    sidebar: false,
   },
   {
     path: "/appo",
