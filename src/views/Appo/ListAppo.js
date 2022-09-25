@@ -122,7 +122,7 @@ class ListAppo extends Component {
                                       onClick={() => {
                                         history.push(
                                           "/admin/user/edit/" +
-                                            getListAppoResult[key].userKey
+                                            getListAppoResult[key].uid
                                         );
                                       }}
                                     >

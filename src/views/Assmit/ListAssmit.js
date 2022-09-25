@@ -132,7 +132,7 @@ class ListAssmit extends Component {
                                       onClick={() => {
                                         history.push(
                                           "/admin/user/edit/" +
-                                            getListAssmitResult[key].userKey
+                                            getListAssmitResult[key].uid
                                         );
                                       }}
                                     >
