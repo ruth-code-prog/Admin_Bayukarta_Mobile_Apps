@@ -8,6 +8,7 @@ import {
   CardBody,
   Table,
   Button,
+  ButtonGroup,
   Spinner,
   InputGroup,
   Input,
@@ -20,6 +21,7 @@ import { getListAppo, deleteAppo, searchListAppo } from "actions/AppoAction";
 import swal from "sweetalert";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
+import { Route } from "react-router-dom";
 
 class ListAppo extends Component {
   componentDidMount() {
@@ -48,23 +50,23 @@ class ListAppo extends Component {
     const { getListAppoError, getListAppoLoading, getListAppoResult } =
       this.props;
     return (
-      <div className="content">
+      <div className='content'>
         <Row>
-          <Col md="12">
+          <Col md='12'>
             <Card>
-              <Row className="px-4 align-items-center justify-content-between">
+              <Row className='px-4 align-items-center justify-content-between'>
                 <CardHeader>
-                  <CardTitle tag="h4">List appoitments Pasien Umum</CardTitle>
+                  <CardTitle tag='h4'>List appoitments Pasien Umum</CardTitle>
                 </CardHeader>
-                <form className="mt-4">
-                  <InputGroup className="no-border">
+                <form className='mt-4'>
+                  <InputGroup className='no-border'>
                     <Input
                       onChange={this.handleSearch}
-                      placeholder="Search..."
+                      placeholder='Search...'
                     />
-                    <InputGroupAddon addonType="append">
+                    <InputGroupAddon addonType='append'>
                       <InputGroupText>
-                        <i className="nc-icon nc-zoom-split" />
+                        <i className='nc-icon nc-zoom-split' />
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
@@ -72,7 +74,7 @@ class ListAppo extends Component {
               </Row>
               <CardBody>
                 <Table>
-                  <thead className="text-primary">
+                  <thead className='text-primary'>
                     <tr>
                       <th>No.</th>
                       <th>KTP</th>
@@ -92,12 +94,12 @@ class ListAppo extends Component {
                     {getListAppoResult ? (
                       Object.keys(getListAppoResult).map((key, index) => (
                         <tr key={key}>
-                          <td>{index+1}</td>
+                          <td>{index + 1}</td>
                           <td>
                             <Zoom>
                               <img
                                 src={getListAppoResult[key].gambar}
-                                width="180"
+                                width='180'
                                 alt={getListAppoResult[key].namaAkun}
                               />
                             </Zoom>
@@ -111,37 +113,55 @@ class ListAppo extends Component {
                           <td>{getListAppoResult[key].dokter}</td>
                           <td>{getListAppoResult[key].tanggalKehadiran}</td>
                           <td>
-                            <Button
-                              color="danger"
-                              className="ml-2"
-                              onClick={() =>
-                                this.removeData(
-                                  key,
-                                  getListAppoResult[key]?.image
-                                )
-                              }
-                            >
-                              Hapus
-                            </Button>
+                            <ButtonGroup>
+                              <Route
+                                render={({ history }) => {
+                                  return (
+                                    <Button
+                                      color='warning'
+                                      onClick={() => {
+                                        history.push(
+                                          "/admin/user/edit/" +
+                                            getListAppoResult[key].userKey
+                                        );
+                                      }}
+                                    >
+                                      Edit
+                                    </Button>
+                                  );
+                                }}
+                              />
+                              <Button
+                                color='danger'
+                                onClick={() =>
+                                  this.removeData(
+                                    key,
+                                    getListAppoResult[key]?.image
+                                  )
+                                }
+                              >
+                                Hapus
+                              </Button>
+                            </ButtonGroup>
                           </td>
                           <td></td>
                         </tr>
                       ))
                     ) : getListAppoLoading ? (
                       <tr>
-                        <td colSpan="3" align="center">
-                          <Spinner color="primary" />
+                        <td colSpan='3' align='center'>
+                          <Spinner color='primary' />
                         </td>
                       </tr>
                     ) : getListAppoError ? (
                       <tr>
-                        <td colSpan="3" align="center">
+                        <td colSpan='3' align='center'>
                           {getListAppoError}
                         </td>
                       </tr>
                     ) : (
                       <tr>
-                        <td colSpan="3" align="center">
+                        <td colSpan='3' align='center'>
                           Data Kosong
                         </td>
                       </tr>

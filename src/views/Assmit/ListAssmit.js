@@ -8,6 +8,7 @@ import {
   CardBody,
   Table,
   Button,
+  ButtonGroup,
   Spinner,
   InputGroup,
   Input,
@@ -24,6 +25,7 @@ import {
 import swal from "sweetalert";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
+import { Route } from "react-router-dom";
 
 class ListAssmit extends Component {
   componentDidMount() {
@@ -54,26 +56,27 @@ class ListAssmit extends Component {
   render() {
     const { getListAssmitError, getListAssmitLoading, getListAssmitResult } =
       this.props;
+
     return (
-      <div className="content">
+      <div className='content'>
         <Row>
-          <Col md="12">
+          <Col md='12'>
             <Card>
-              <Row className="px-4 align-items-center justify-content-between">
+              <Row className='px-4 align-items-center justify-content-between'>
                 <CardHeader>
-                  <CardTitle tag="h4">
+                  <CardTitle tag='h4'>
                     List appoitments Pasien Asuransi & Mitra
                   </CardTitle>
                 </CardHeader>
-                <form className="mt-4">
-                  <InputGroup className="no-border">
+                <form className='mt-4'>
+                  <InputGroup className='no-border'>
                     <Input
                       onChange={this.handleSearch}
-                      placeholder="Search..."
+                      placeholder='Search...'
                     />
-                    <InputGroupAddon addonType="append">
+                    <InputGroupAddon addonType='append'>
                       <InputGroupText>
-                        <i className="nc-icon nc-zoom-split" />
+                        <i className='nc-icon nc-zoom-split' />
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
@@ -81,7 +84,7 @@ class ListAssmit extends Component {
               </Row>
               <CardBody>
                 <Table>
-                  <thead className="text-primary">
+                  <thead className='text-primary'>
                     <tr>
                       <th>No</th>
                       <th>Kartu Peserta</th>
@@ -106,7 +109,7 @@ class ListAssmit extends Component {
                             <Zoom>
                               <img
                                 src={getListAssmitResult[key].photo}
-                                width="180"
+                                width='180'
                                 alt={getListAssmitResult[key].namaAkun}
                               />
                             </Zoom>
@@ -120,37 +123,54 @@ class ListAssmit extends Component {
                           <td>{getListAssmitResult[key].dokter}</td>
                           <td>{getListAssmitResult[key].tanggalKehadiran}</td>
                           <td>
-                            <Button
-                              color="danger"
-                              className="ml-2"
-                              onClick={() =>
-                                this.removeData(
-                                  key,
-                                  getListAssmitResult[key]?.image
-                                )
-                              }
-                            >
-                              Hapus
-                            </Button>
+                            <ButtonGroup>
+                              <Route
+                                render={({ history }) => {
+                                  return (
+                                    <Button
+                                      color='warning'
+                                      onClick={() => {
+                                        history.push(
+                                          "/admin/user/edit/" +
+                                            getListAssmitResult[key].userKey
+                                        );
+                                      }}
+                                    >
+                                      Edit
+                                    </Button>
+                                  );
+                                }}
+                              />
+                              <Button
+                                color='danger'
+                                onClick={() =>
+                                  this.removeData(
+                                    key,
+                                    getListAssmitResult[key]?.image
+                                  )
+                                }
+                              >
+                                Hapus
+                              </Button>
+                            </ButtonGroup>
                           </td>
-                          <td></td>
                         </tr>
                       ))
                     ) : getListAssmitLoading ? (
                       <tr>
-                        <td colSpan="3" align="center">
-                          <Spinner color="primary" />
+                        <td colSpan='3' align='center'>
+                          <Spinner color='primary' />
                         </td>
                       </tr>
                     ) : getListAssmitError ? (
                       <tr>
-                        <td colSpan="3" align="center">
+                        <td colSpan='3' align='center'>
                           {getListAssmitError}
                         </td>
                       </tr>
                     ) : (
                       <tr>
-                        <td colSpan="3" align="center">
+                        <td colSpan='3' align='center'>
                           Data Kosong
                         </td>
                       </tr>
