@@ -78,7 +78,7 @@ export default function Item({
             color={active ? 'success' : 'secondary'}
             onClick={handleActivate}
           >
-            {active ? 'Aktif' : 'Non-Aktif'}
+            {active ? 'HaveQue' : 'Non-Que'}
           </Button>
         </ButtonGroup>
       </td>
