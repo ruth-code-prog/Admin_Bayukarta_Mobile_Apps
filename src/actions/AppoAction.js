@@ -155,6 +155,7 @@ export const updateAppo = (data) => {
                     klinik: data.klinik,
                     dokter: data.dokter,
                     tanggalKehadiran: data.tanggalKehadiran,
+                    jamKehadiran: data.jamKehadiran,
                     image: downloadURL,
                   };
 
@@ -190,6 +191,7 @@ export const updateAppo = (data) => {
         klinik: data.klinik,
         dokter: data.dokter,
         tanggalKehadiran: data.tanggalKehadiran,
+        jamKehadiran: data.jamKehadiran,
         image: data.image,
       };
 
@@ -240,3 +242,15 @@ export const deleteAppo = (id, image) => {
   };
 };
 
+export const activateAppo = (data) => (dispatch) => {
+  FIREBASE.database()
+    .ref('appoitment/' + data.id)
+    .update(data)
+    .then((response) => {
+      console.log('berhasil update status appo')
+    })
+    .catch((error) => {
+      console.log('gagal update status appo')
+      alert(error)
+    })
+}

@@ -8,6 +8,7 @@ import {
   CardBody,
   Table,
   Button,
+  ButtonGroup,
   Spinner,
   InputGroup,
   Input,
@@ -24,6 +25,8 @@ import {
 import swal from "sweetalert";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
+import { Route } from "react-router-dom";
+import Item from './components/Item'
 
 class ListAssmit extends Component {
   componentDidMount() {
@@ -54,26 +57,27 @@ class ListAssmit extends Component {
   render() {
     const { getListAssmitError, getListAssmitLoading, getListAssmitResult } =
       this.props;
+
     return (
-      <div className="content">
+      <div className='content'>
         <Row>
-          <Col md="12">
+          <Col md='12'>
             <Card>
-              <Row className="px-4 align-items-center justify-content-between">
+              <Row className='px-4 align-items-center justify-content-between'>
                 <CardHeader>
-                  <CardTitle tag="h4">
+                  <CardTitle tag='h4'>
                     List appoitments Pasien Asuransi & Mitra
                   </CardTitle>
                 </CardHeader>
-                <form className="mt-4">
-                  <InputGroup className="no-border">
+                <form className='mt-4'>
+                  <InputGroup className='no-border'>
                     <Input
                       onChange={this.handleSearch}
-                      placeholder="Search..."
+                      placeholder='Search...'
                     />
-                    <InputGroupAddon addonType="append">
+                    <InputGroupAddon addonType='append'>
                       <InputGroupText>
-                        <i className="nc-icon nc-zoom-split" />
+                        <i className='nc-icon nc-zoom-split' />
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>
@@ -81,9 +85,9 @@ class ListAssmit extends Component {
               </Row>
               <CardBody>
                 <Table>
-                  <thead className="text-primary">
+                  <thead className='text-primary'>
                     <tr>
-                      <th>No</th>
+                    <th>No</th>
                       <th>Kartu Peserta</th>
                       <th>Account Name</th>
                       <th>Nama Pasien</th>
@@ -92,65 +96,40 @@ class ListAssmit extends Component {
                       <th>Penjamin</th>
                       <th>Klinik</th>
                       <th>Dokter</th>
-                      <th>tanggal Kehadiran</th>
+                      <th>Tanggal Kehadiran</th>
+                      <th>Jam Kehadiran</th>
                       <th></th>
                     </tr>
                   </thead>
 
                   <tbody>
                     {getListAssmitResult ? (
-                      Object.keys(getListAssmitResult).map((key, index) => (
-                        <tr key={key}>
-                          <td>{index + 1}</td>
-                          <td>
-                            <Zoom>
-                              <img
-                                src={getListAssmitResult[key].photo}
-                                width="180"
-                                alt={getListAssmitResult[key].namaAkun}
-                              />
-                            </Zoom>
-                          </td>
-                          <td>{getListAssmitResult[key].namaAkun}</td>
-                          <td>{getListAssmitResult[key].nama}</td>
-                          <td>{getListAssmitResult[key].noWa}</td>
-                          <td>{getListAssmitResult[key].tanggalLahir}</td>
-                          <td>{getListAssmitResult[key].penjamin}</td>
-                          <td>{getListAssmitResult[key].klinik}</td>
-                          <td>{getListAssmitResult[key].dokter}</td>
-                          <td>{getListAssmitResult[key].tanggalKehadiran}</td>
-                          <td>
-                            <Button
-                              color="danger"
-                              className="ml-2"
-                              onClick={() =>
-                                this.removeData(
-                                  key,
-                                  getListAssmitResult[key]?.image
-                                )
-                              }
-                            >
-                              Hapus
-                            </Button>
-                          </td>
-                          <td></td>
-                        </tr>
-                      ))
+                      Object.keys(getListAssmitResult).map((key, index) => {
+                        return (
+                          <Item
+                            key={index}
+                            itemKey={key}
+                            index={index}
+                            getListAssmitResult={getListAssmitResult}
+                            removeData={this.removeData}
+                          />
+                        )
+                      })
                     ) : getListAssmitLoading ? (
                       <tr>
-                        <td colSpan="3" align="center">
-                          <Spinner color="primary" />
+                        <td colSpan='3' align='center'>
+                          <Spinner color='primary' />
                         </td>
                       </tr>
                     ) : getListAssmitError ? (
                       <tr>
-                        <td colSpan="3" align="center">
+                        <td colSpan='3' align='center'>
                           {getListAssmitError}
                         </td>
                       </tr>
                     ) : (
                       <tr>
-                        <td colSpan="3" align="center">
+                        <td colSpan='3' align='center'>
                           Data Kosong
                         </td>
                       </tr>

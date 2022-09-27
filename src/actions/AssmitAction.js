@@ -155,6 +155,7 @@ export const updateAssmit = (data) => {
                     klinik: data.klinik,
                     dokter: data.dokter,
                     tanggalKehadiran: data.tanggalKehadiran,
+                    jamKehadiran: data.jamKehadiran,
                     image: downloadURL,
                   };
 
@@ -190,6 +191,7 @@ export const updateAssmit = (data) => {
         klinik: data.klinik,
         dokter: data.dokter,
         tanggalKehadiran: data.tanggalKehadiran,
+        jamKehadiran: data.jamKehadiran,
         image: data.image,
       };
 
@@ -240,3 +242,15 @@ export const deleteAssmit = (id, image) => {
   };
 };
 
+export const activateAssMit = (data) => (dispatch) => {
+  FIREBASE.database()
+    .ref('assMit/' + data.id)
+    .update(data)
+    .then((response) => {
+      console.log('berhasil update status mitra/ass')
+    })
+    .catch((error) => {
+      console.log('gagal update status mitra/ass')
+      alert(error)
+    })
+}
