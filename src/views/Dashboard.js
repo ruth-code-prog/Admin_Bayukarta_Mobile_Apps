@@ -16,6 +16,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
+import FIREBASE from '../config/FIREBASE'
 import React from "react";
 // react plugin used to create charts
 import { Line, Pie } from "react-chartjs-2";

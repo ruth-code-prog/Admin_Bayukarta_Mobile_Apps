@@ -4,12 +4,14 @@ import {
     GET_DETAIL_APPO,
     UPDATE_APPO,
     DELETE_APPO,
+    UPDATE_UNREAD_APPO,
   } from "actions/AppoAction";
   
   const initialState = {
     getListAppoLoading: false,
     getListAppoResult: false,
     getListAppoError: false,
+    unreadListAppo: 0,
   
     tambahAppoLoading: false,
     tambahAppoResult: false,
@@ -64,10 +66,17 @@ import {
           deleteAppoLoading: action.payload.loading,
           deleteAppoResult: action.payload.data,
           deleteAppoError: action.payload.errorMessage,
-        };
-  
-      default:
-        return state;
-    }
+        }
+
+        case UPDATE_UNREAD_APPO:
+      return {
+        ...state,
+        unreadListAppo: action.payload,
+      }
+
+    default:
+      return state
   }
+}
+
   

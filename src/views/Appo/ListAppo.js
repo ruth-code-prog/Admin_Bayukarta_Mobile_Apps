@@ -48,7 +48,7 @@ class ListAppo extends Component {
   }
 
   render() {
-    const { getListAppoError, getListAppoLoading, getListAppoResult } =
+    const { getListAppoError, getListAppoLoading, getListAppoResult, unreadListAppo, } =
       this.props
     return (
       <div className='content'>
@@ -139,6 +139,7 @@ const mapStateToProps = (state) => ({
   getListAppoLoading: state.AppoReducer.getListAppoLoading,
   getListAppoResult: state.AppoReducer.getListAppoResult,
   getListAppoError: state.AppoReducer.getListAppoError,
+  unreadListAppo: state.AppoReducer.unreadListAppo,
 
   deleteAppoLoading: state.AppoReducer.deleteAppoLoading,
   deleteAppoResult: state.AppoReducer.deleteAppoResult,

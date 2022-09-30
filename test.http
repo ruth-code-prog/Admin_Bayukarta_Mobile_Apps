@@ -1,0 +1,16 @@
+POST https://fcm.googleapis.com/fcm/send
+Content-Type: application/json
+Authorization: key=AAAAQV_Cb4g:APA91bH0vGL4W5Q3y8vDNY0tPR2EWI5-3WSh8e1bhvCR8PMU47krSby68ohyJuYcvTmIa9r3Z9GUDWv0n-nJ4gmcYSii0c_AOHFH6ZGpavkT-p3iBBew08yC8rOpP0QqyNbtxyMUIL9w
+
+{
+    "to": "e_5njTq9bArysDI26U_q8z:APA91bGFY7pNhVWXRiQaU4IdCpHHbwlrF6t6sgYiq4boQ5D7H20oWz4zxL3JiE-Baq-t1e4zyopTa-XJx-r0pYuNyvnTkEaOin9_s_3HugzaeoG_4ZP4wgqcqVWJDE896I-5QuPZ_G0X",
+    "notification": {
+        "title": "Appointment Baru",
+        "body": "Abdur Rahim membuat appointment baru dengan dokter Ahmad Abdul Hamid"
+    },
+    "data": {
+        "category": "appointment",
+        "page": "/admin/appo",
+    },
+    "priority": "high"
+}
