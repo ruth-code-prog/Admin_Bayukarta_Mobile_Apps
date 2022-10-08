@@ -81,8 +81,10 @@ class ListAppo extends Component {
                       <th>KTP</th>
                       <th>Account Name</th>
                       <th>Nama Pasien</th>
-                      <th>No Wa</th>
+                      <th>No Rekam Medis</th>
                       <th>tanggal Lahir</th>
+                      <th>Alamat</th>
+                      <th>No Wa</th>
                       <th>Penjamin</th>
                       <th>Klinik</th>
                       <th>Dokter</th>

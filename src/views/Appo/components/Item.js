@@ -105,8 +105,10 @@ export default function Item({
         </td>
         <td>{getListAppoResult[itemKey]?.namaAkun}</td>
         <td>{getListAppoResult[itemKey]?.nama}</td>
-        <td>{getListAppoResult[itemKey]?.noWa}</td>
+        <td>{getListAppoResult[itemKey]?.noRm}</td>
         <td>{getListAppoResult[itemKey]?.tanggalLahir}</td>
+        <td>{getListAppoResult[itemKey]?.alamat}</td>
+        <td>{getListAppoResult[itemKey]?.noWa}</td>
         <td>{getListAppoResult[itemKey]?.penjamin}</td>
         <td>{getListAppoResult[itemKey]?.klinik}</td>
         <td>{getListAppoResult[itemKey]?.dokter}</td>

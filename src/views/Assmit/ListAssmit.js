@@ -94,6 +94,8 @@ class ListAssmit extends Component {
                       <th>No Wa</th>
                       <th>tanggal Lahir</th>
                       <th>Penjamin</th>
+                      <th>No ID Card/ No Asuransi</th>
+                      <th>Unit Kerja</th>
                       <th>Klinik</th>
                       <th>Dokter</th>
                       <th>Tanggal Kehadiran</th>

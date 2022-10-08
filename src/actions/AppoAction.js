@@ -161,8 +161,10 @@ export const updateAppo = (data) => {
                   const dataBaru = {
                     namaAkun: data.namaAkun,
                     nama: data.nama,
+                    noRm: data.noRm,
                     noWa: data.noWa,
                     tanggalLahir: data.tanggalLahir,
+                    alamat: data.alamat,
                     penjamin: data.penjamin,
                     klinik: data.klinik,
                     dokter: data.dokter,
@@ -197,8 +199,10 @@ export const updateAppo = (data) => {
       const dataBaru = {
         namaAkun: data.namaAkun,
         nama: data.nama,
+        noRm: data.noRm,
         noWa: data.noWa,
         tanggalLahir: data.tanggalLahir,
+        alamat: data.alamat,
         penjamin: data.penjamin,
         klinik: data.klinik,
         dokter: data.dokter,

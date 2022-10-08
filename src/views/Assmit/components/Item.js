@@ -108,6 +108,8 @@ export default function Item({
         <td>{getListAssmitResult[itemKey]?.noWa}</td>
         <td>{getListAssmitResult[itemKey]?.tanggalLahir}</td>
         <td>{getListAssmitResult[itemKey]?.penjamin}</td>
+        <td>{getListAssmitResult[itemKey]?.noAss}</td>
+        <td>{getListAssmitResult[itemKey]?.bagian}</td>
         <td>{getListAssmitResult[itemKey]?.klinik}</td>
         <td>{getListAssmitResult[itemKey]?.dokter}</td>
         <td>{getListAssmitResult[itemKey]?.tanggalKehadiran}</td>
