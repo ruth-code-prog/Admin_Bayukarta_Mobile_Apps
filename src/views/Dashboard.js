@@ -48,9 +48,9 @@ function Dashboard() {
           <Col md="12">
             <Card>
               <CardHeader>
-              <a href="https://datastudio.google.com/reporting/79c1277f-8ad9-483d-9121-9a298066134b" target="_blank" rel="noopener noreferrer">
-               <h2>Laporan Pasien @ Bayukarta Mobile</h2>
-               <h4>Klik di sini !!</h4>
+              <h3>Laporan Pasien Bayukarta Mobile</h3>
+              <a href="https://datastudio.google.com/reporting/79c1277f-8ad9-483d-9121-9a298066134b" target="_blank" rel="noreferrer">
+               <button>Click di sini</button>
               </a>
                 <CardTitle tag="h5">Welcome to "Bayukarta Web Server Online"</CardTitle>
                 <CardTitle tag="h5">(Backend Web Server)</CardTitle>
