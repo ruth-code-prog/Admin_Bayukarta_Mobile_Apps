@@ -29,6 +29,7 @@ import {
   CardTitle,
   Row,
   Col,
+  Button,
 } from "reactstrap";
 // core components
 import {
@@ -50,7 +51,7 @@ function Dashboard() {
               <CardHeader>
               <h3>Laporan Pasien Bayukarta Mobile</h3>
               <a href="https://datastudio.google.com/reporting/79c1277f-8ad9-483d-9121-9a298066134b" target="_blank" rel="noreferrer">
-               <button color="success">Klik di sini</button>
+               <Button color="success">Klik di sini</Button>
               </a>
                 <CardTitle tag="h5">Welcome to "Bayukarta Web Server Online"</CardTitle>
                 <CardTitle tag="h5">(Backend Web Server)</CardTitle>
